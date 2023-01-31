@@ -21,6 +21,8 @@
   },
   "rules": {
     "no-console": "off",
-    "require-atomic-updates": "off"
+    "require-atomic-updates": "off",
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"]
   }
 }
