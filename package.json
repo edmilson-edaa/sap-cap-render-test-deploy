@@ -11,10 +11,12 @@
     "express": "^4"
   },
   "devDependencies": {
+    "@sap/ux-specification": "^1.102.15",
     "sqlite3": "^5.1.4"
   },
   "scripts": {
-    "start": "cds run"
+    "start": "cds run",
+    "watch-users": "cds watch --open users/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
@@ -25,5 +27,8 @@
         }
       }
     }
-  }
+  },
+  "sapux": [
+    "app/users"
+  ]
 }
