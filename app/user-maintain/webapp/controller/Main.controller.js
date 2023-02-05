@@ -8,7 +8,7 @@ sap.ui.define([
 
 
         onTilePress: function (event) {
-            debugger
+            // debugger
             const { routeName } = event.getSource().data();
             const route = this.getRouter().getRoute(routeName);
 

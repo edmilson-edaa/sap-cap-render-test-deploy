@@ -5,11 +5,11 @@ sap.ui.define([], function () {
         createUserStatus({ model, userStatusData }) {
             model.create("/UserStatus", userStatusData, {
                 success: (response) => {
-                    debugger;
+                    // debugger;
                     console.log("ok");
                 },
                 error: (response) => {
-                    debugger;
+                    // debugger;
                     console.log("error");
                 },
             });
@@ -17,11 +17,11 @@ sap.ui.define([], function () {
         deleteUserStatusByPath({ model, resourcePath }) {
             model.remove(resourcePath, {
                 success: (response) => {
-                    debugger;
+                    // debugger;
                     console.log("ok");
                 },
                 error: (response) => {
-                    debugger;
+                    // debugger;
                     console.log("error");
                 },
             });
