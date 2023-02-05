@@ -1,0 +1,150 @@
+{
+    "_version": "1.48.0",
+    "sap.app": {
+        "id": "ein.codes.admin.usermaintain",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.8.2",
+            "toolsId": "59c3d410-451a-4aff-8aa6-e01129405b6f"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/v2/user-admin/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "dependencies": {
+            "minUI5Version": "1.109.3",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "ein.codes.admin.usermaintain.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "ein.codes.admin.usermaintain.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false,
+                "path": "ein.codes.admin.usermaintain.view"
+            },
+            "routes": [
+                {
+                    "name": "MainRoute",
+                    "pattern": ":?query:",
+                    "target": "MainTarget"
+                },
+                {
+                    "name": "UserRoute",
+                    "pattern": "User",
+                    "target": "UserTarget"
+                },
+                {
+                    "name": "UserStatusRoute",
+                    "pattern": "UserStatus",
+                    "target": "UserStatusTarget"
+                },
+                {
+                    "name": "UserDocumentsRoute",
+                    "pattern": "UserDocuments",
+                    "target": "UserDocumentsTarget"
+                }
+            ],
+            "targets": {
+                "MainTarget": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Main",
+                    "viewName": "Main"
+                },
+                "UserTarget": {
+                    "viewId": "User",
+                    "viewName": "User"
+                },
+                "UserStatusTarget": {
+                    "viewId": "UserStatus",
+                    "viewName": "UserStatus"
+                },
+                "UserDocumentsTarget": {
+                    "viewId": "UserDocuments",
+                    "viewName": "UserDocuments"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "ein.codes.admin.usermaintain.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {}
+            }
+        }
+    }
+}

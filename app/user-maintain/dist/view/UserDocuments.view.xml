@@ -1,0 +1,17 @@
+<mvc:View controllerName="ein.codes.admin.usermaintain.controller.UserDocuments"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns="sap.m">
+
+    <f:DynamicPage>
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="User Documents Maintenance" />
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+    </f:DynamicPage>
+
+</mvc:View>

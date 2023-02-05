@@ -1,0 +1,1 @@
+sap.ui.define(["./BaseController"],function(e){"use strict";return e.extend("ein.codes.admin.usermaintain.controller.UserDocuments",{onInit(){}})});
