@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Dialog title="Add New Status"
+        afterClose=".addUserStatusDialog.onAfterClose"
+        class="sapUiResponsiveContentPadding"
+        draggable="true"
+        resizable="true">
+        <content>
+            <MessageStrip id="messagestrip-mandatory"
+                text="Fill in all required fields"
+                class="sapUiTinyMarginBottom"
+                visible="false"
+                type="Error" />
+            <Label text="Code:"
+                labelFor="input-status-code" />
+            <Input id="input-status-code"
+                change=".addUserStatusDialog.onStatusCodeChange"
+                placeholder="Enter the status code"
+                class="sapUiTinyMarginBottom"
+                required="true" />
+            <Label text="Name:"
+                labelFor="input-status-name" />
+            <Input id="input-status-name"
+                placeholder="Enter the status name"
+                required="true" />
+        </content>
+        <beginButton>
+            <Button text="Confirm"
+                press=".addUserStatusDialog.onConfirmPress"
+                type="Emphasized" />
+        </beginButton>
+        <endButton>
+            <Button text="Cancel"
+                press=".addUserStatusDialog.onCancelPress" />
+        </endButton>
+    </Dialog>
+
+</core:FragmentDefinition>

@@ -1,0 +1,51 @@
+<mvc:View controllerName="ein.codes.admin.usermaintain.controller.Main"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns="sap.m">
+
+    <f:DynamicPage>
+        <f:content>
+            <VBox>
+                <Panel headerText="User System Settings"
+                    class="sapUiTinyMargin">
+                    <HBox>
+                        <GenericTile header="User Status"
+                            class="sapUiTinyMargin tileLayout"
+                            subheader="Maintain"
+                            press=".onTilePress"
+                            app:routeName="UserStatusRoute">
+                            <TileContent>
+                                <ImageContent src="sap-icon://user-settings" />
+                            </TileContent>
+                        </GenericTile>
+                    </HBox>
+                </Panel>
+                <Panel headerText="User Data Management"
+                    class="sapUiTinyMargin">
+                    <HBox>
+                        <GenericTile header="User"
+                            class="sapUiTinyMargin tileLayout"
+                            subheader="Maintain"
+                            press=".onTilePress"
+                            app:routeName="UserRoute">
+                            <TileContent>
+                                <ImageContent src="sap-icon://user-edit" />
+                            </TileContent>
+                        </GenericTile>
+                        <GenericTile header="User Documents"
+                            class="sapUiTinyMargin tileLayout"
+                            subheader="Maintain"
+                            press=".onTilePress"
+                            app:routeName="UserDocumentsRoute">
+                            <TileContent>
+                                <ImageContent src="sap-icon://account" />
+                            </TileContent>
+                        </GenericTile>
+                    </HBox>
+                </Panel>
+            </VBox>
+        </f:content>
+    </f:DynamicPage>
+
+</mvc:View>

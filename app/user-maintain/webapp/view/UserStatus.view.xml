@@ -1,0 +1,53 @@
+<mvc:View controllerName="ein.codes.admin.usermaintain.controller.UserStatus"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:st="sap.ui.comp.smarttable"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns="sap.m">
+
+    <f:DynamicPage showFooter="{userStatusView>/isModified}">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="User Status Maintenance" />
+                </f:heading>
+                <f:actions>
+                    <Button text="Add"
+                        type="Emphasized"
+                        icon="sap-icon://add"
+                        press=".onAddPress" />
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:content>
+            <st:SmartTable entitySet="UserStatus"
+                editable="{userStatusView>/isEditable}"
+                showTablePersonalisation="false"
+                initiallyVisibleFields="ID,name"
+                tableBindingPath="/UserStatus"
+                tableType="ResponsiveTable"
+                enableAutoBinding="true"
+                editTogglable="true"
+                demandPopin="true"
+                header="Records"
+                app:useSmartToggle="true">
+                <Table mode="{= ${userStatusView>/isEditable} ? 'Delete' : 'None' }"
+                    delete=".onListItemDeletePress"
+                    growingScrollToLoad="true"
+                    sticky="ColumnHeaders"
+                    fixedLayout="false"
+                    growing="true">
+                </Table>
+            </st:SmartTable>
+        </f:content>
+        <f:footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button text="Save"
+                    type="Emphasized" />
+                <Button text="Cancel" />
+            </OverflowToolbar>
+        </f:footer>
+    </f:DynamicPage>
+
+</mvc:View>

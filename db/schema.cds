@@ -14,17 +14,20 @@ entity Users : managed {
 }
 
 entity UserStatus : managed {
-    key ID    : Integer;
+        @mandatory
+        @title: 'Status Code'
+    key ID    : String(2);
+
+        @mandatory
+        @title: 'Status Name'
         name  : String(100);
         users : Association to many Users
                     on users.status = $self;
 }
 
 entity UserDocuments : managed {
-    key ID   : Integer;
+    key ID   : UUID;
         RG   : String(20);
         CPF  : String(11);
         CNPJ : String(14);
-        user : Association to Users
-                   on user.document = $self;
 }
