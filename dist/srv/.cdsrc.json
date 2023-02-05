@@ -1,8 +1,0 @@
-{
-    "build": {
-      "target": "dist",
-      "tasks": [
-        { "for": "nodejs", "src": "srv", "options": {"model": ["db","srv"] } }
-      ]
-    }
-  }
