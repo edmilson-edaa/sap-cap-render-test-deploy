@@ -1,13 +1,13 @@
 sap.ui.define([
     "./BaseController",
-    "./addUserStatusDialog",
-], function (BaseController, addUserStatusDialog) {
+    "./AddUserStatusDialog",
+], function (BaseController, AddUserStatusDialog) {
     "use strict";
 
     return BaseController.extend("ein.codes.admin.usermaintain.controller.UserStatus", {
 
         onInit() {
-            this.addUserStatusDialog = new addUserStatusDialog();
+            this.AddUserStatusDialog = new AddUserStatusDialog();
             const viewModel = this.createJsonModel({
                 isEditable: false,
                 isModified: false,
@@ -16,7 +16,7 @@ sap.ui.define([
         },
 
         onAddPress() {
-            const { name } = this.addUserStatusDialog;
+            const { name } = this.AddUserStatusDialog;
             this.loadFragment({ name }).then((dialog) => dialog.open());
         },
 
